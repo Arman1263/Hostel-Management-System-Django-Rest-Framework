@@ -1,0 +1,12 @@
+#root {
+  width: 100%;
+}
+
+.card-title {
+  font-weight: 600;
+}
+
+.badge {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
