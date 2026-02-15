@@ -226,28 +226,51 @@ npm run dev
 
 --- 
 
-🐳 Prerequisites
+Here is **only the Docker section**, formatted properly and consistent with the rest of your README structure.
+Replace your current raw Docker text with this:
 
-Install Docker Desktop
-https://www.docker.com/products/docker-desktop/
+---
 
-That’s it.
+## 🐳 Docker Deployment
 
-🚀 Run Using Docker (Recommended)
-Option 1 — Quick Run (Without Cloning Repository)
+### 🧰 Prerequisites
+
+Install Docker Desktop:
+
+[https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
+
+That’s it. No need to install Python, Node.js, or manage dependencies manually.
+
+---
+
+### 🚀 Run Using Docker (Recommended)
+
+#### 🔹 Option 1 — Quick Run (Without Cloning Repository)
+
+Run backend:
+
+```bash
 docker run -d -p 8000:8000 --name backend armanshikalgar/hostel-backend:1.0
+```
+
+Run frontend:
+
+```bash
 docker run -d -p 3000:80 --name frontend armanshikalgar/hostel-frontend:1.0
+```
 
 Then open:
 
-Backend → http://localhost:8000
+* **Backend →** [http://localhost:8000](http://localhost:8000)
+* **Frontend →** [http://localhost:3000](http://localhost:3000)
 
-Frontend → http://localhost:3000
+---
 
-Option 2 — Using Docker Compose (Best Practice)
+#### 🔹 Option 2 — Using Docker Compose (Best Practice)
 
-Create a file named docker-compose.yml:
+Create a file named `docker-compose.yml`:
 
+```yaml
 version: "3.9"
 
 services:
@@ -262,23 +285,38 @@ services:
       - "3000:80"
     depends_on:
       - backend
+```
 
-Then run:
+Run:
 
+```bash
 docker compose up -d
+```
 
 To stop:
 
+```bash
 docker compose down
-🔄 Restart After Shutdown
+```
+
+---
+
+### 🔄 Restart After Shutdown
 
 If containers already exist:
 
+```bash
 docker start backend
 docker start frontend
-🗑️ Remove Containers
-docker rm -f backend frontend
+```
 
+---
+
+### 🗑️ Remove Containers
+
+```bash
+docker rm -f backend frontend
+```
 ---
 
 👨‍💻 Author
