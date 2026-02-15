@@ -89,6 +89,9 @@ Includes:
 ### Database
 - SQLite (Development)
 
+### Deployment 
+- Docker
+
 ---
 
 ## 📸 Screenshots
@@ -222,6 +225,61 @@ npm run dev
 5. Multi-Hostel SaaS Version  
 
 --- 
+
+🐳 Prerequisites
+
+Install Docker Desktop
+https://www.docker.com/products/docker-desktop/
+
+That’s it.
+
+🚀 Run Using Docker (Recommended)
+Option 1 — Quick Run (Without Cloning Repository)
+docker run -d -p 8000:8000 --name backend armanshikalgar/hostel-backend:1.0
+docker run -d -p 3000:80 --name frontend armanshikalgar/hostel-frontend:1.0
+
+Then open:
+
+Backend → http://localhost:8000
+
+Frontend → http://localhost:3000
+
+Option 2 — Using Docker Compose (Best Practice)
+
+Create a file named docker-compose.yml:
+
+version: "3.9"
+
+services:
+  backend:
+    image: armanshikalgar/hostel-backend:1.0
+    ports:
+      - "8000:8000"
+
+  frontend:
+    image: armanshikalgar/hostel-frontend:1.0
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+Then run:
+
+docker compose up -d
+
+To stop:
+
+docker compose down
+🔄 Restart After Shutdown
+
+If containers already exist:
+
+docker start backend
+docker start frontend
+🗑️ Remove Containers
+docker rm -f backend frontend
+
+---
 
 👨‍💻 Author
 Arman Shikalgar
