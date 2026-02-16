@@ -271,16 +271,16 @@ Then open:
 Create a file named `docker-compose.yml`:
 
 ```yaml
-version: "3.9"
-
 services:
   backend:
     image: armanshikalgar/hostel-backend:1.0
+    container_name: hostel_backend
     ports:
       - "8000:8000"
 
   frontend:
     image: armanshikalgar/hostel-frontend:1.0
+    container_name: hostel_frontend
     ports:
       - "3000:80"
     depends_on:
@@ -290,7 +290,7 @@ services:
 Run:
 
 ```bash
-docker compose up -d
+docker compose up 
 ```
 
 To stop:
