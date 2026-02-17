@@ -1,1 +1,1 @@
-web: gunicorn Hostel_Management_DRF.wsgi
+web: gunicorn Hostel_Management_DRF.wsgix`x``
