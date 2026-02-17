@@ -1,0 +1,1 @@
+web: gunicorn Hostel_Management_DRF.wsgi

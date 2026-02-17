@@ -1,0 +1,4 @@
+docker ps
+docker ps -a
+docker start backend
+docker start frontend
